@@ -1,0 +1,21 @@
+.ContainerSearch {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15vh;
+    padding: 1rem calc(8vw + 2rem);
+}
+
+.Search {
+    width: clamp(14rem, 20vw, 22rem);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.Search input {
+    font-size: calc(.2vw + 1rem);
+    width: 100%;
+    height: 100%;
+    padding: .8rem 1.2rem;
+}

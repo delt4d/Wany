@@ -1,0 +1,157 @@
+/*linear-gradient(to top, #0b090a, rgba(164, 22, 26, .9))*/
+
+.ProfileContainer>section {
+    padding: 6rem 2.2rem 8rem;
+}
+
+section.UserInformation {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-radius: 0;
+    padding-top: calc(var(--header-height) * 2 + 2rem);
+    margin-top: calc(var(--header-height) * -1);
+    background: linear-gradient(to top, transparent, rgba(164, 22, 26, .2), rgba(164, 22, 26, .8));
+}
+
+.UserAvatar {
+    --size: 15vw;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+}
+
+.UserAvatar__image,
+.UserAvatar__image img {
+    width: 100%;
+    height: 100%;
+}
+
+.UserAvatar__image {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.UserAvatar .UserVerified {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.UserInformation__content {
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section.ProjectsContainer {
+    --padding: 22vw;
+    background: linear-gradient(to bottom, #0b090a, rgba(164, 22, 26, .2), #0b090a 95%);
+    padding-left: calc(var(--padding) / 2);
+    padding-right: calc(var(--padding) / 2);
+}
+
+.ProjectsContainerTitle {
+    margin-bottom: 2rem;
+}
+
+.CreateProject {
+    padding: 2rem 0;
+}
+
+.CreateProject h5 {
+    margin-bottom: 2rem;
+}
+
+.CreateProject__body {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.CreateProject__body>div {
+    padding: .5rem 0;
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+}
+
+.CreateProject__body>div input,
+.CreateProject__body>div textarea {
+    padding: .6rem .8rem;
+    border-radius: 20px;
+}
+
+.CreateProject__body>div textarea {
+    resize: vertical;
+}
+
+section.MyProjectsContainer {
+    min-height: 10rem;
+    background-color: transparent;
+    display: flex;
+    align-items: self-end;
+    gap: 1rem;
+    padding-top: 0;
+}
+
+.MyProject {
+    margin: 0 0 5rem;
+    background-color: #0002;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.MyProject h6 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.MyProject button,
+.MyProject input[type=button] {
+    margin: 2px;
+    padding: .5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    transition: .2s ease background;
+}
+
+.MyProject button:hover,
+.MyProject input[type=button]:hover {
+    filter: brightness(.8);
+}
+
+.MyProject .DivImage {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.MyProject .DivImage img {
+    width: 100%;
+}
+
+.MyProject .DivBottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+.BtnCreateProject {
+    margin-top: 2rem;
+    padding: .8rem 5rem;
+    display: block;
+    margin-left: auto;
+}
+
+.BtnStartStream {
+    margin: 1rem auto 0;
+    display: block;
+    padding: 1rem 6rem;
+}

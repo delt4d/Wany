@@ -1,0 +1,32 @@
+.Title {
+    font-size: 4rem;
+    margin: 40px 0 20px;
+}
+
+.Container {
+    margin-top: 14vh;
+}
+
+.Container>div {
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.Block {
+    background-color: var(--gray-color);
+    width: 10rem;
+    display: grid;
+    place-items: center;
+    padding: 2rem 0;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.BlockSelected {
+    cursor: default;
+    background-color: var(--primary-color);
+}

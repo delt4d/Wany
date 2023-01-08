@@ -1,0 +1,140 @@
+.SigninContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height));
+}
+
+.SigninContainer h1 {
+    font-family: Playfair Display;
+    font-size: clamp(5rem, 5vw, 10rem);
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -3px;
+}
+
+.Form {
+    display: flex;
+    justify-content: center;
+}
+
+.Form form {
+    max-width: 40rem;
+    min-width: 18rem;
+    width: 80vw;
+    height: 100%;
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 3.8rem;
+    gap: 1rem;
+}
+
+.FormGroupSubmit {
+    display: flex;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.FormGroupSubmit>div {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+}
+
+.DivInput {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5rem;
+    border: 1px solid #fff;
+    padding: 1rem;
+}
+
+.DivInput span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DivInput input {
+    flex-grow: 1;
+    letter-spacing: 1px;
+    padding: 1rem;
+    height: 100%;
+    color: #fff;
+    background: transparent;
+    font-weight: 200;
+    font-family: poppins;
+}
+
+.DivInput input:-webkit-autofill,
+.DivInput input:-webkit-autofill:focus {
+    box-shadow: 0 0 0 30px var(--dark-color) inset;
+    -webkit-box-shadow: 0 0 0 30px var(--dark-color) inset;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.DivInput input::placeholder {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.DivInput>* {
+    user-select: none;
+}
+
+/*
+.BtnSubmit {
+    padding: 1rem 4rem;
+cursor: pointer;
+color: #fff;
+border-radius: var(--btn-border-radius);
+}
+
+.BtnSubmit,
+.BtnSubmit:hover,
+.BtnSubmit:active,
+.BtnSubmit:focus {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    outline: none;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+}
+
+.BtnSubmit:hover {
+    box-shadow:
+        0 0 20px var(--primary-color),
+        0 0 80px -10px var(--primary-color) !important;
+    filter: brightness(1.2);
+}
+*/
+
+.LinkChangeForm {
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.LinkChangeForm::after {
+    content: "";
+    padding-top: 2px;
+    background: var(--primary-color);
+    transition: 0.2s ease width;
+    width: 0;
+}
+
+.LinkChangeForm:hover::after {
+    width: 100%;
+}

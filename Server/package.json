@@ -1,0 +1,61 @@
+{
+  "name": "wany-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register src/main.ts",
+    "build": "tsc && tsc-alias",
+    "build:watch": "concurrently \"tsc -w\" \"tsc-alias -w\"",
+    "start": "npm run build && node dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delt4d/WANY_SERVER.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delt4d/WANY_SERVER/issues"
+  },
+  "homepage": "https://github.com/delt4d/WANY_SERVER#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "helmet": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "peer": "^0.6.1",
+    "socket.io": "^4.5.2",
+    "typescript": "^4.8.3"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.14",
+    "@types/helmet": "^4.0.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.7.19",
+    "@types/peerjs": "^1.1.0",
+    "@types/socket.io": "^3.0.2",
+    "concurrently": "^7.4.0",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths": "^4.1.0"
+  },
+  "_moduleAliases": {
+    "@routes": "./dist/routes",
+    "@config": "./dist/config",
+    "@models": "./dist/models",
+    "@middleware": "./dist/middleware",
+    "@uploads": "./dist/uploads",
+    "@utils": "./dist/utils"
+  }
+}

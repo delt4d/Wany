@@ -1,0 +1,11 @@
+.Footer {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 0 1rem;
+    margin-top: 1rem;
+}
+
+.Footer span {
+    font-size: .8rem;
+}

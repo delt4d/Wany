@@ -1,0 +1,16 @@
+.Overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: transparent;
+    transition: .2s ease background;
+}
+
+.Overlay.Open {
+    z-index: 200;
+    background: #0009;
+}
+
+.Modal {
+    padding: 3rem 0;
+}

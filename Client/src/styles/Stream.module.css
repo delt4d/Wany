@@ -1,0 +1,60 @@
+#RoomLink {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    padding: 7px;
+}
+
+#StreamContainer {
+    padding-top: 2rem;
+}
+
+#VideoContainer {
+    width: 100vw;
+    min-height: 20rem;
+    /* height: 65vh; */
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0 2rem;
+    margin-top: 10rem;
+}
+
+#VideoContainer .Video {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+#VideoContainer .VideoNULLStreaming {
+    position: relative;
+}
+
+#VideoContainer .VideoNULLStreaming::after {
+    content: "Clique para iniciar a Live";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    background-color: #efefef11;
+    height: 100%;
+    width: 100%;
+}
+
+#VideoContainer .DeviceVideo {
+    max-height: 90vh;
+}
+
+#VideoContainer .UserVideo {
+    width: 20rem;
+    height: auto;
+    aspect-ratio: 2/1;
+    position: absolute;
+    top: -10rem;
+    left: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 5px #0008;
+}

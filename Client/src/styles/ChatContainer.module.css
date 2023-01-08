@@ -1,0 +1,73 @@
+#Container {
+    background-color: #efefef11;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Title {
+    font-size: 4rem;
+    padding-top: .5rem;
+    padding-bottom: .8rem;
+}
+
+.Content {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 0 12px;
+    height: 20rem;
+}
+
+.UsersOnline {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
+.DivPesquisa {
+    display: flex;
+}
+
+.Pesquisa {
+    height: 2.4rem;
+    padding: 4px 6px;
+    flex-grow: 1;
+}
+
+.BtnEnviar {
+    width: 6rem;
+    border: 2px solid #fff1;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.Block {
+    width: 28rem;
+    min-height: 5.2rem;
+    padding: 20px 12px;
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff2;
+}
+
+.Block img {
+    width: 4rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.Block>div {
+    padding-left: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Block>div span:nth-child(1) {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Block>div span:nth-child(2) {
+    line-break: anywhere;
+    width: 100%;
+}

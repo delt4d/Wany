@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "commonjs",
+    "rootDir": "src",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist/declaration",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "baseUrl": "./src",
+    "incremental": true,
+    "moduleResolution": "Node",
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types",
+    ],
+    "paths": {
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@middleware/*": [
+        "middleware/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@uploads/*": [
+        "uploads/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
