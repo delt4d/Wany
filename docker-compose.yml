@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16
+    container_name: wany_database
+    environment:
+      POSTGRES_USER: wanyuser
+      POSTGRES_PASSWORD: wanypass
+      POSTGRES_DB: wanydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./Server/database/:/docker-entrypoint-initdb.d/
+    restart: unless-stopped
