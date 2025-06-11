@@ -12,24 +12,24 @@
     "help": "next start -h"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "concurrently": "^7.4.0",
-    "next": "12.3.0",
-    "notiflix": "^3.2.5",
-    "peerjs": "^1.4.7",
+    "axios": "^1.9.0",
+    "concurrently": "^9.1.2",
+    "next": "15.3.3",
+    "notiflix": "^3.2.8",
+    "peerjs": "^1.5.5",
     "phosphor-react": "^1.4.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "socket.io-client": "^4.5.2"
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.3.1",
-    "@types/node": "18.7.18",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "24.0.1",
     "@types/peerjs": "^1.1.0",
-    "@types/react": "18.0.20",
-    "@types/react-dom": "18.0.6",
-    "eslint": "8.23.1",
-    "eslint-config-next": "12.3.0",
-    "typescript": "4.8.3"
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "eslint": "9.28.0",
+    "eslint-config-next": "15.3.3",
+    "typescript": "5.8.3"
   }
 }
