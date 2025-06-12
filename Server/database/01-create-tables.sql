@@ -1,28 +1,31 @@
--- Users table
-CREATE TABLE users (
-    usr_id SERIAL PRIMARY KEY,
-    usr_email VARCHAR(255) UNIQUE NOT NULL,
-    usr_username VARCHAR(100) UNIQUE NOT NULL,
+-- USERS TABLE
+CREATE TABLE IF NOT EXISTS users (
+    usr_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    usr_email VARCHAR(255) NOT NULL UNIQUE,
+    usr_username VARCHAR(100) NOT NULL UNIQUE,
     usr_password VARCHAR(255) NOT NULL,
-    usr_avatar BYTEA,
+    usr_avatar BLOB,
     usr_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Projects table
-CREATE TABLE projects (
-    proj_id SERIAL PRIMARY KEY,
+-- PROJECTS TABLE
+CREATE TABLE IF NOT EXISTS projects (
+    proj_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
     proj_name VARCHAR(255) NOT NULL,
     proj_description TEXT,
     proj_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     proj_file VARCHAR(255),
-    proj_image BYTEA,
-    proj_user_id INTEGER REFERENCES users(usr_id) ON DELETE CASCADE
+    proj_image BLOB,
+    proj_user_id CHAR(36),
+    FOREIGN KEY (proj_user_id) REFERENCES users(usr_id) ON DELETE CASCADE
 );
 
--- Project stars (many-to-many)
-CREATE TABLE project_stars (
-    star_id SERIAL PRIMARY KEY,
-    star_user_id INTEGER REFERENCES users(usr_id) ON DELETE CASCADE,
-    star_proj_id INTEGER REFERENCES projects(proj_id) ON DELETE CASCADE,
-    UNIQUE(star_user_id, star_proj_id)
+-- PROJECT STARS TABLE
+CREATE TABLE IF NOT EXISTS project_stars (
+    star_id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    star_user_id CHAR(36) NOT NULL,
+    star_proj_id CHAR(36) NOT NULL,
+    UNIQUE KEY unique_star (star_user_id, star_proj_id),
+    FOREIGN KEY (star_user_id) REFERENCES users(usr_id) ON DELETE CASCADE,
+    FOREIGN KEY (star_proj_id) REFERENCES projects(proj_id) ON DELETE CASCADE
 );
