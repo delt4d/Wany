@@ -1,13 +1,14 @@
 services:
   db:
-    image: postgres:16
+    image: mysql:8
     container_name: wany_database
     environment:
-      POSTGRES_USER: wanyuser
-      POSTGRES_PASSWORD: wanypass
-      POSTGRES_DB: wanydb
+      MYSQL_USER: wanyuser
+      MYSQL_PASSWORD: wanypass
+      MYSQL_DATABASE: wanydb
+      MYSQL_ROOT_PASSWORD: rootpass
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
       - ./Server/database/:/docker-entrypoint-initdb.d/
     restart: unless-stopped
