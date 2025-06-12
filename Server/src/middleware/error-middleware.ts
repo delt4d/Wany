@@ -1,13 +1,16 @@
 import { HttpErrorResponse } from "@routes/index";
-import { NextFunction, Request, Response } from "express";
+import express from "express";
 
-export const errorMiddleware = (err: any, req: Request, res: Response, next: NextFunction) => {
+export function errorMiddleware(err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
     if (res.headersSent) {
-        return next(err)
+        next(err);
+        return;
     }
     if (err instanceof HttpErrorResponse) {
-        return err.sendResponse(res)
+        err.sendResponse(res);
+        return;
     }
 
-    return HttpErrorResponse.Internal("erro inesperado", err.message || "Ocorreu um erro e não foi possível obter as informações de erro necessárias", "unknown").sendResponse(res)
+    const internalErrorResponse = HttpErrorResponse.Internal("erro inesperado", err.message || "Ocorreu um erro e não foi possível obter as informações de erro necessárias", "unknown");
+    internalErrorResponse.sendResponse(res);
 }

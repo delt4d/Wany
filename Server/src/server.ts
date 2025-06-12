@@ -1,7 +1,6 @@
 import { pid, exit } from "process"
 
 import express from "express"
-import bodyParser from "body-parser"
 import cors from "cors"
 import http from "http"
 import cookieParser from "cookie-parser"
@@ -42,7 +41,9 @@ export function start() {
     app.use(express.urlencoded({ extended: true }))
     app.use(cookieParser(authConfig.secret_token))
     app.use("/api", router)
-    app.get("/", (req, res) => { res.send("SERVER IS RUNNING") })
+    app.get("/", (req, res) => { 
+        res.send("SERVER IS RUNNING.");
+    });
     app.use(errorMiddleware)
 
     server.listen(appConfig.port, appConfig.host, async () => {
