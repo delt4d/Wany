@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql:8
+    container_name: wany_database
+    environment:
+      MYSQL_USER: wanyuser
+      MYSQL_PASSWORD: wanypass
+      MYSQL_DATABASE: wanydb
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./Server/database/:/docker-entrypoint-initdb.d/
+    restart: unless-stopped
