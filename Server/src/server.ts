@@ -6,7 +6,6 @@ import http from "http"
 import cookieParser from "cookie-parser"
 
 import { router } from "@routes/index"
-import { ExpressPeerServer } from "peer"
 import { errorMiddleware } from "@middleware/error-middleware"
 import { appConfig } from "@config/app-config"
 import { createFolder, folderExists } from "@utils/files"
@@ -22,15 +21,6 @@ export function start() {
     const app = express()
     const server = http.createServer(app)
 
-    // app.use(function (req, res, next) {
-    //     // res.setHeader('charset', 'utf-8')
-    //     // res.set("Access-Control-Allow-Credentials", "true")
-    //     // res.set("Access-Control-Allow-Origin", appConfig.frontend)
-    //     // res.set("Access-Control-Allow-Headers", appConfig.frontend)
-    //     // next();
-    // });
-
-    app.use("/peer", ExpressPeerServer(server))
     app.use(cors({
         credentials: true,
         origin: appConfig.frontend,

@@ -113,27 +113,6 @@ export const socketConnection = (server: http.Server) => {
                 }
                 const newMessage = addMessage(roomId, { user: users[userId].user, message, created_at: new Date() })
                 io.to(roomId).emit("message-received", newMessage)
-
-                // try {
-                //     const linkList = messageLinks(newMessage)
-
-                //     if (linkList) {
-                //         const cleanLink = (link: string) => {
-                //             if (link.indexOf("http://") === 0) link.slice(7)
-                //             else if (link.indexOf("https://") === 0) link.slice(8)
-                //             if (link[link.length - 1] === "/") link.slice(0, -1)
-                //             return link
-                //         }
-                //         linkList.forEach((link => {
-                //             newMessage.message.replaceAll(link, `<a href="${link}">${cleanLink(link)}</a>`)
-                //         }))
-
-                //         io.to(roomId).emit("updated-message", newMessage)
-                //     }
-                // }
-                // catch (ex) {
-                //     console.error(ex);
-                // }
             })
 
             socket.on("get-older-messages", (offset: number) => {
@@ -184,70 +163,3 @@ export const socketConnection = (server: http.Server) => {
         })
     })
 }
-
-    // const io = new Server(server, {
-    //     cors: {
-    //         origin: appConfig.frontend
-    //     }
-    // })
-
-    // io.on("connection", (socket: Socket) => {
-    //     // socket.to(room) send to the sender if he is in the room
-    //     // socket.broadcast.to(room) send to all sockets in the room but the sender
-    //     // io.to(room) send to all sockets in the room including the sender
-    //     const usersRepository = new UserRepository()
-
-    //     console.log(`Usuário conectado no socket ${socket.id}`)
-
-    //     socket.on("ready", (roomId: string) => {
-    //         socket.emit("me", socket.id)
-    //         socket.join(roomId)
-    //         socket.broadcast.to(roomId).emit('user_connected', socket.id)
-
-    //         socket.on("disconnect", () => {
-    //             // socket se desconectou
-    //             io.to(roomId).emit("user_disconnected", socket.id)
-    //         })
-
-    //         socket.on("send_call", ({ to, from, userId }) => {
-    //             // streamer manda a call para o usuário
-    //             console.log("streamer sending call to", to)
-
-    //             usersRepository.get(userId)
-    //                 .then(user => {
-    //                     socket.broadcast.to(to).emit("send_call", { from, user })
-    //                 })
-    //                 .catch((err: any) => {
-    //                     // send error
-    //                 })
-    //         })
-
-    //         socket.on("accept_call", ({ to, from, peerId, userId }) => {
-    //             // usuário entrou na chamada
-    //             console.log("call accepted")
-
-    //             usersRepository.get(userId)
-    //                 .then(user => {
-    //                     socket.broadcast.to(to).emit("accept_call", { from, peerId, user })
-    //                 })
-    //                 .catch((err: any) => {
-    //                     // send error
-    //                 })
-    //         })
-
-    //         socket.on("message", ({ to, from, peerId, userId, message }) => {
-    //             const toM = to != null ? `to ${to}` : `for all in stream`
-    //             console.log(`user ${userId} sending message ${toM}`)
-
-    //             usersRepository.get(userId)
-    //                 .then(user => {
-    //                     if (!to) io.to(roomId).emit("message", { from, peerId, user, message })
-    //                     else io.to(to).emit("message", { from, peerId, user, message })
-    //                 })
-    //                 .catch((err: any) => {
-    //                     // send error
-    //                     console.log("nao foi possivel obter o usuario")
-    //                 })
-    //         })
-    //     })
-    // })
